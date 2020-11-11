@@ -37,7 +37,7 @@ public class AlgorithmTest {
 
     @Test
     public void testIsPerfectNumber() {
-        boolean expected = true;
+        boolean expected = false;
         boolean actual = algorithm.isPerfectNumber(7);
         assertEquals(actual, expected);
     }

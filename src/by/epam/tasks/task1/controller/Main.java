@@ -1,5 +1,8 @@
 package by.epam.tasks.task1.controller;
 
+import by.epam.tasks.task1.model.entity.Circle;
+import by.epam.tasks.task1.model.entity.Point;
+import by.epam.tasks.task1.model.entity.Square;
 import by.epam.tasks.task1.model.service.Algorithm;
 import by.epam.tasks.task1.model.service.CircleService;
 import by.epam.tasks.task1.model.service.PointService;
@@ -54,6 +57,21 @@ public class Main {
            for(Map.Entry<Double, Double> pair: map.entrySet()){
                sb.append(pair.getKey()).append("  -  ").append(pair.getValue()).append("\n");
            }
+
+           Circle circle = new Circle(5);
+           func = circleService.calculateCircleSquare(circle);
+           sb.append(circle).append(" has square: ").append(func);
+           func = circleService.calculateCircleLength(circle);
+           sb.append(" and length: ").append(func);
+
+           Square square = new Square(5);
+           func = squareService.findSquareInCircle(square);
+           sb.append("\nSquare of square inner circle inner ").append(square).append(" is ").append(func);
+
+           Point point1 = new Point(12, 1);
+           Point point2 = new Point(24, 6);
+           Point point = pointService.findClosestPointToZero(point1, point2);
+           sb.append("\n").append(point).append(" close to zero than ").append(point.equals(point1)?point2:point1);
 
 
        } catch (Exception e){
