@@ -1,17 +1,17 @@
 package by.epam.tasks.task1.model.entity;
 
 public class Circle {
-    private int radius;
+    private double radius;
 
-    public Circle(int radius) {
+    public Circle(double radius) {
         setRadius(radius);
     }
 
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
 
-    public void setRadius(int radius) {
+    public void setRadius(double radius) {
         radius = Math.max(radius, 0);
         this.radius = radius;
     }
